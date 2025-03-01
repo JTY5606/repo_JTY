@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+
+<table>
+	<tr>
+		<td>seq</td>
+		<td>lastName</td>
+		<td>name</td>
+		<td>naverId</td>
+		<td>memo</td>
+		<td>nickname</td>
+	</tr>
+	<tr th:each="list : ${list}">
+		<td th:text="${list.seq}"></td>
+		<td th:text="${list.lastName}"></td>
+		<td th:text="${list.name}"></td>
+		<td th:text="${list.naverId}"></td>
+		<td th:text="${list.memo}"></td>
+		<td th:text="${list.nickname}"></td>
+	</tr>
+</table>
