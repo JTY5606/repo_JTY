@@ -26,7 +26,43 @@
 		FROM
 			member
 		WHERE 1=1
-			AND seq =1
+			AND seq = #{seq}
+	    	ORDER BY seq DESC
+	    
+	</select>
+	  
+
+	<select id="selectTwo" resultMap="resultMapObj">
+		select
+			seq,
+	    	name
+		FROM
+			member
+		WHERE 1=1
+			AND seq = #{seq}
+	    	ORDER BY seq DESC
+	    
+	</select>
+		<select id="selectB" resultMap="resultMapObj">
+		select
+			seq,
+			naverId
+		FROM
+			member
+		WHERE 1=1
+			AND seq = #{seq}
+	    	ORDER BY seq DESC
+	    
+	</select>
+	
+	<select id="selectC" resultMap="resultMapObj">
+		select
+			seq,
+			memo
+		FROM
+			member
+		WHERE 1=1
+			AND seq = #{seq}
 	    	ORDER BY seq DESC
 	    
 	</select>

@@ -21,8 +21,33 @@ public class MemberController {
 		}
 	
 	@RequestMapping(value = "/member/memberXdmView")
-	public String memberXdmView(Model model) {
-		model.addAttribute("item", memberService.selectOne());
+	public String memberXdmView(Model model, MemberDto memberDto) {
+		
+		System.out.println("memberDto.getSeq(): " + memberDto.getSeq());
+		
+		model.addAttribute("item", memberService.selectOne(memberDto));
 		return "member/memberXdmView";
+	}
+	@RequestMapping(value = "/member/memberXdmName")
+	public String memberXdmName(Model model, MemberDto memberDto) {
+		
+		System.out.println("memberDto.getSeq(): " + memberDto.getSeq());
+		model.addAttribute("a", memberService.selectTwo(memberDto));
+		return "member/memberXdmName";
+	}
+	
+	@RequestMapping(value = "/member/memberXdmId")
+	public String memberXdmId(Model model, MemberDto memberDto) {
+		
+		System.out.println("memberDto.getSeq():" + memberDto.getSeq());
+		model.addAttribute("b", memberService.selectB(memberDto));
+		return "member/memberXdmId";
+	}
+	@RequestMapping(value = "/member/memberXdmMemo")
+	public String memberXdmMemo(Model model, MemberDto memberDto) {
+		
+		System.out.println("memberDto.getSeq():" + memberDto.getSeq());
+		model.addAttribute("c",memberService.selectC(memberDto));
+		return "member/memberXdmMemo";
 	}
 }

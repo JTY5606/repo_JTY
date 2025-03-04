@@ -8,6 +8,9 @@ import org.springframework.stereotype.Repository;
 public interface MemberDao {
 	
 	public List<MemberDto> selectList();
-	public MemberDto selectOne();
+	public MemberDto selectOne(MemberDto memberDto);//맵퍼까지 끌고가서 값을 넣어줌
+	public MemberDto selectTwo(MemberDto memberDto);
+	public MemberDto selectB(MemberDto memberDto);
+	public MemberDto selectC(MemberDto memberDto);
 
 }

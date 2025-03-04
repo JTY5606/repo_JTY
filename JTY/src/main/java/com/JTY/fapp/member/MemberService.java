@@ -16,7 +16,16 @@ public class MemberService {
 		return memberDao.selectList();
 	}
 	
-	public MemberDto selectOne() {
-		return memberDao.selectOne();
+	public MemberDto selectOne(MemberDto memberDto) {
+		return memberDao.selectOne(memberDto);
+	}
+	public MemberDto selectTwo(MemberDto memberDto) {
+		return memberDao.selectTwo(memberDto);
+	}
+	public MemberDto selectB(MemberDto memberDto) {
+		return memberDao.selectB(memberDto);
+	}
+	public MemberDto selectC(MemberDto memberDto) {
+		return memberDao.selectC(memberDto);
 	}
 }
