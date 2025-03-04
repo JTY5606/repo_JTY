@@ -1,8 +1,5 @@
 package com.JTY.fapp.member;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,12 +13,16 @@ public class MemberController {
 
 	@RequestMapping(value = "/member/memberXdmList")
 	public String memberXdmList(Model model) {
-		List<MemberDto> memberDtos = new ArrayList<>();
 		
-		memberDtos = memberService.selectList();
-		
-		model.addAttribute("list", memberDtos);
+
+		model.addAttribute("list", memberService.selectList());
 		
 		return "member/memberXdmList"; 
 		}
+	
+	@RequestMapping(value = "/member/memberXdmView")
+	public String memberXdmView(Model model) {
+		model.addAttribute("item", memberService.selectOne());
+		return "member/memberXdmView";
+	}
 }

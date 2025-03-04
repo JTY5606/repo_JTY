@@ -15,10 +15,12 @@
 	</tr>
 	<tr th:each="list : ${list}">
 		<td th:text="${list.seq}"></td>
-		<td th:text="${list.lastName}"></td>
+		<td><a th:text="${list.lastName}" th:href="@{/member/memberXdmView}"></a></td>
 		<td th:text="${list.name}"></td>
 		<td th:text="${list.naverId}"></td>
 		<td th:text="${list.memo}"></td>
 		<td th:text="${list.nickname}"></td>
 	</tr>
 </table>
+</body>
+</html>

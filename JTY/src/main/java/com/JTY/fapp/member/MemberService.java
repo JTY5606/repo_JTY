@@ -12,10 +12,11 @@ public class MemberService {
 	MemberDao memberDao;
 	
 	public List<MemberDto> selectList() {
-		List<MemberDto> memberDtos = new ArrayList<>();
-		
-		memberDtos = memberDao.selectList();
-		
-		return memberDtos; 
+			
+		return memberDao.selectList();
+	}
+	
+	public MemberDto selectOne() {
+		return memberDao.selectOne();
 	}
 }

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.JTY.fapp.messenger.MessengerDao">
+
+<resultMap id="resultMapObj" type="com.JTY.fapp.messenger.MessengerDto"></resultMap>
+
+	<select id="selectList" resultMap="resultMapObj">
+		SELECT
+			seq,
+		    main,
+		    type,
+		    messengeraddress,
+		    member_seq
+		FROM
+			messenger
+		where 1=1
+		order by seq desc
+		;
+	</select>
+	  
+</mapper>
