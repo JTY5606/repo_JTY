@@ -19,5 +19,8 @@ public class HomepageService {
 		
 		return homepageDtos; 
 	}
+	public HomepageDto selectItem(HomepageDto homepageDto) {
+		return homepageDao.selectItem(homepageDto);
+	}
 
 }

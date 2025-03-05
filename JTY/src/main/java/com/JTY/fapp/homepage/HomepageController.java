@@ -24,5 +24,13 @@ public class HomepageController {
 		
 		return "homepage/homepageXdmList"; 
 		}
+	
+	@RequestMapping(value = "/homepage/homepageXdmItem")
+	public String homepageXdmItem(Model model,HomepageDto homepageDto) {
+		
+		System.out.println("homepage.getSeq():" + homepageDto.getSeq());
+		model.addAttribute("item",homepageService.selectItem(homepageDto));
+		return "homepage/homepageXdmItem";
+	}
 
 }

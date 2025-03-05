@@ -8,5 +8,7 @@ import org.springframework.stereotype.Repository;
 public interface EmailDao {
 	
 	public List<EmailDto> selectList();
+	public EmailDto selectEmail(EmailDto emailDto);
+	public int insert(EmailDto emailDto);
 
 }

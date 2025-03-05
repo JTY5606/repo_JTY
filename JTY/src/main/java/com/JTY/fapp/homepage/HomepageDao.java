@@ -8,5 +8,6 @@ import org.springframework.stereotype.Repository;
 public interface HomepageDao {
 	
 	public List<HomepageDto> selectList();
+	public HomepageDto selectItem(HomepageDto homepageDto);
 
 }

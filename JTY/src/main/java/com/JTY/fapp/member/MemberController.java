@@ -50,4 +50,32 @@ public class MemberController {
 		model.addAttribute("c",memberService.selectC(memberDto));
 		return "member/memberXdmMemo";
 	}
+	
+	@RequestMapping(value = "/member/memberXdmAll")
+	public String memberXdmAll(Model model, MemberDto memberDto) {
+		
+		System.out.println("memberDto.getSeq():" + memberDto.getSeq());
+		model.addAttribute("d",memberService.selectAll(memberDto));
+		return "member/memberXdmAll";
+	}
+	@RequestMapping(value = "/member/memberXdmForm")
+	public String memberXdmForm() {
+		
+		return "member/memberXdmForm";
+	}
+	
+	@RequestMapping(value = "/member/memberXdmInst")
+	public String memberXdmInst(MemberDto memberDto) {
+		
+		System.out.println("memberDto.getLastName(): " + memberDto.getLastName());
+		System.out.println("memberDto.getName(): " + memberDto.getName());
+		System.out.println("memberDto.getNaverId(): " + memberDto.getNaverId());
+		System.out.println("memberDto.getMemo(): " + memberDto.getMemo());
+		System.out.println("memberDto.getNickName(): " + memberDto.getNickname());
+		
+		memberService.insert(memberDto);
+		
+		System.out.println("memberDto.getSeq(): " + memberDto.getSeq());
+		return "redirect:/member/memberXdmList";
+	}
 }

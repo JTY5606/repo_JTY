@@ -25,4 +25,30 @@ public class EmailController {
 		return "email/emailXdmList";
 		
 	}
+	@RequestMapping(value = "/email/emailXdmEmail")
+	public String emailXdmEmail(Model model, EmailDto emailDto) {
+		
+		System.out.println("emailDto.getSeq(): " + emailDto.getSeq());
+		model.addAttribute("email", emailService.selectEmail(emailDto));
+		return "email/emailXdmEmail";
+	}
+	
+	@RequestMapping(value = "/email/emailXdmForm")
+	public String emailXdmForm() {
+		
+		
+		return "email/emailXdmForm";
+	}
+	@RequestMapping(value = "/email/emailXdmInst")
+	public String emailXdmInst(EmailDto emailDto) {
+		
+		System.out.println("emailDto.getMain():" + emailDto.getMain());
+		System.out.println("emailDto.getEmail():" + emailDto.getEmail());
+		System.out.println("emailDto.getMember_seq():" + emailDto.getMember_seq());
+		
+		emailService.insert(emailDto);
+		
+		System.out.println("emailDto.getSeq():" + emailDto.getSeq());
+		return "redirect:/email/emailXdmList";
+	}
 }

@@ -24,5 +24,34 @@ public class BirthdayController {
 		
 		return "birthday/birthdayXdmList"; 
 		}
+	@RequestMapping(value = "/birthday/birthdayXdmDate")
+	public String birthdayXdmDate(Model model,BirthdayDto birthdayDto) {
+		
+		System.out.println("birthdayDto.getSeq(): " + birthdayDto.getSeq());
+		model.addAttribute("date",birthdayService.selectDate(birthdayDto));
+		return "birthday/birthdayXdmDate";
+	}
+	
+	@RequestMapping(value = "/birthday/birthdayXdmForm")
+	public String birthdayXdmForm() {
+		
+		
+		return "birthday/birthdayXdmForm";
+	}
+	@RequestMapping(value = "/birthday/birthdayXdmInst")
+	public String birthdayXdmInst(BirthdayDto birthdayDto) {
+		
+		System.out.println("birthdayDto.getMain() : " + birthdayDto.getMain());
+		System.out.println("birthdayDto.getType() : " + birthdayDto.getType());
+		System.out.println("birthdayDto.getDate() : " + birthdayDto.getDate());
+		System.out.println("birthdayDto.getMember_seq() : " + birthdayDto.getMember_seq());
+		
+		
+		birthdayService.insert(birthdayDto);
+		System.out.println("birthdayDto.getSeq() : " + birthdayDto.getSeq());
+		
+		return "redirect:/birthday/birthdayXdmList";
+		
+	}
 
 }

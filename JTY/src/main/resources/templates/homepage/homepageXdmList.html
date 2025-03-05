@@ -14,7 +14,7 @@
 	<tr th:each="list : ${list}">
 		<td th:text="${list.seq}"></td>
 		<td th:text="${list.main}"></td>
-		<td th:text="${list.homepage}"></td>
+		<td><a th:text="${list.homepage}" th:href=@{/homepage/homepageXdmItem(seq=${list.seq})}></td>
 		<td th:text="${list.member_seq}"></td>
 	</tr>
 </table>

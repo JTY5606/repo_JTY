@@ -28,4 +28,10 @@ public class MemberService {
 	public MemberDto selectC(MemberDto memberDto) {
 		return memberDao.selectC(memberDto);
 	}
+	public MemberDto selectAll(MemberDto memberDto) {
+		return memberDao.selectAll(memberDto);
+	}
+	public int insert(MemberDto memberDto) {
+		return memberDao.insert(memberDto);
+	}
 }

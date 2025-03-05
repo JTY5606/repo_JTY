@@ -15,7 +15,37 @@
 			email
 		where 1=1
 		order by seq desc
-		;
+		
 	</select>
+	<select id="selectEmail" resultMap="resultMapObj">
+		SELECT
+			seq,
+		    main,
+		    email,
+		    member_seq
+		FROM
+			email
+		where 1=1
+			AND seq = #{seq}
+		order by seq desc
+		
+	</select>
+	<insert id="insert">
+		INSERT INTO email(
+			main,
+			email,
+			member_seq
+			)
+		values(
+			#{main},
+			#{email},
+			#{member_seq}
+			)
+		
+		<selectKey resultType="String" keyProperty="seq" order="AFTER">
+			SELECT last_insert_id()
+		</selectKey>
+		
+	</insert>
 	  
 </mapper>

@@ -19,4 +19,14 @@ public class EmailService {
 		
 		return emailDtos; 
 	}
+	
+	public EmailDto selectEmail(EmailDto emailDto) {
+		
+		return emailDao.selectEmail(emailDto);
+	}
+	public int insert(EmailDto emailDto) {
+		
+		return emailDao.insert(emailDto);
+	}
+	
 }

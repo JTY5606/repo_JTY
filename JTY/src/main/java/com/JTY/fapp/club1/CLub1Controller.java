@@ -24,5 +24,10 @@ public class CLub1Controller {
 		
 		return "club1/club1XdmList"; 
 		}
+	@RequestMapping(value = "/club1/club1XdmForm")
+	public String club1XdmForm() {
+		
+		return "club1/club1XdmForm";
+	}
 
 }

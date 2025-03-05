@@ -19,5 +19,40 @@
 		order by seq desc
 		;
 	</select>
-	  
+	
+	<select id="selectItem" resultMap="resultMapObj">
+		SELECT
+			seq,
+		    main,
+		    type,
+		    postalcode,
+		    address,
+		    member_seq
+		FROM
+			address
+		where 1=1
+			AND seq = #{seq}
+		order by seq desc
+		;
+	</select>
+	<insert id="insert">
+		INSERT INTO address (
+			main,
+			type,
+			postalcode,
+			address,
+			member_seq
+			)
+		 values (
+			1,
+			#{type},
+			"asd",
+			"서울",
+			1
+			)
+	
+	<selectKey resultType="String" keyProperty="seq" order="AFTER">
+			SELECT last_insert_id()
+		</selectKey>
+	</insert>
 </mapper>

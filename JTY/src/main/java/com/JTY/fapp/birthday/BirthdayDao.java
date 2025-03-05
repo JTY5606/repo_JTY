@@ -8,5 +8,7 @@ import org.springframework.stereotype.Repository;
 public interface BirthdayDao {
 	
 	public List<BirthdayDto> selectList();
+	public BirthdayDto selectDate(BirthdayDto birthdayDto);
+	public int insert(BirthdayDto birthdayDto);
 
 }

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+<form action="/email/emailXdmInst" method="post" id="form">
+	main: <input type="int" name="main" id="main" length="10" >
+	email: <input type="text" name="email" id="email" length="30" placeholder="email 입력">
+	member_seq: <input type="int" name="member_seq" id="member_seq" >
+	<button type="button" id="btnSave">저장</button>
+</form>
+	<script type="text/javascript">
+	document.getElementById("btnSave").onclick = function(){
+		document.getElementById("form").submit();
+	}
+	</script>
+
+
+
+</body>
+</html>

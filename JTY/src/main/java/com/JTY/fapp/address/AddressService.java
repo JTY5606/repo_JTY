@@ -19,5 +19,12 @@ public class AddressService {
 		
 		return addressDtos; 
 	}
+	public AddressDto selectItem(AddressDto addressDto) {
+		return addressDao.selectItem(addressDto);
+	}
+	public int insert(AddressDto addressDto) {
+		return addressDao.insert(addressDto);
+	}
+
 
 }

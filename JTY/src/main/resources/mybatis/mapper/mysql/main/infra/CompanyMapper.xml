@@ -17,7 +17,40 @@
 			company
 		where 1=1
 		order by seq desc
-		;
+		
 	</select>
-	  
+	<select id="selectItem" resultMap="resultMapObj">
+		SELECT
+			seq,
+		    main,
+		    company,
+		    department,
+		    position,
+		    member_seq
+		FROM
+			company
+		where 1=1
+			AND seq = #{seq}
+		order by seq desc
+		
+	</select>
+	 <insert id="insert">
+	 	INSERT INTO company(
+	 	main,
+	 	company,
+	 	department,
+	 	position,
+	 	member_seq
+	 	)
+	 	value(
+	 	#{main},
+	 	#{company},
+	 	#{department},
+	 	#{position},
+	 	#{member_seq}
+	 	)
+	 	<selectKey resultType="String" keyProperty="seq" order="AFTER">
+			SELECT last_insert_id()
+		</selectKey>
+	 </insert>
 </mapper>

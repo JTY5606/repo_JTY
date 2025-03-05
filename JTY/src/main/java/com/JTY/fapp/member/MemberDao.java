@@ -12,5 +12,7 @@ public interface MemberDao {
 	public MemberDto selectTwo(MemberDto memberDto);
 	public MemberDto selectB(MemberDto memberDto);
 	public MemberDto selectC(MemberDto memberDto);
+	public MemberDto selectAll(MemberDto memberDto);
+	public int insert(MemberDto memberDto);
 
 }

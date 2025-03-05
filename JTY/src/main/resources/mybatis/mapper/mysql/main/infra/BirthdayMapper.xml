@@ -16,7 +16,38 @@
 			birthday
 		where 1=1
 		order by seq desc
-		;
+		
 	</select>
+	<select id="selectDate" resultMap="resultMapObj">
+		SELECT
+			seq,
+		    main,
+		    type,
+		    Date,
+		    member_seq
+		FROM
+			birthday
+		where 1=1
+			AND seq = #{seq}
+		order by seq desc
+		
+	</select>
+	<insert id="insert">
+		INSERT INTO birthday(
+			main,
+			type,
+			date,
+			member_seq
+			)
+		values(
+			#{main},
+			#{type},
+			#{date},
+			#{member_seq}
+			)
+		<selectKey resultType="String" keyProperty="seq" order="AFTER">
+			SELECT last_insert_id()
+		</selectKey>
+	</insert>
 	  
 </mapper>

@@ -16,7 +16,13 @@
 		<td th:text="${list.seq}"></td>
 		<td th:text="${list.main}"></td>
 		<td th:text="${list.type}"></td>
-		<td th:text="${list.Date}"></td>
+		<td><a th:text="${list.Date}" th:href="@{/birthday/birthdayXdmDate(seq=${list.seq})}"></td>
 		<td th:text="${list.member_seq}"></td>
 	</tr>
 </table>
+<br>
+<a href="/birthday/birthdayXdmForm">등록</a>
+
+
+</body>
+</html>

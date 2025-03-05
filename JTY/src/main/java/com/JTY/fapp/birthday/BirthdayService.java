@@ -19,5 +19,12 @@ public class BirthdayService {
 		
 		return birthdayDtos; 
 	}
+	
+	public BirthdayDto selectDate(BirthdayDto birthdayDto) {
+		return birthdayDao.selectDate(birthdayDto);
+	}
+	public int insert(BirthdayDto birthdayDto) {
+		return birthdayDao.insert(birthdayDto);
+	}
 
 }

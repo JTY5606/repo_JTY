@@ -66,5 +66,40 @@
 	    	ORDER BY seq DESC
 	    
 	</select>
-	  
+	<select id="selectAll" resultMap="resultMapObj">
+		SELECT
+			seq,
+		    lastName,
+		    name,
+		    naverId,
+		    memo,
+		    nickname
+		FROM
+			member
+		where 1=1
+			AND seq = #{seq}
+		order by seq desc
+		
+	</select>
+	 <insert id="insert">
+	INSERT INTO member(
+		lastName,
+		name,
+		naverId,
+		memo,
+		nickname
+		)
+	values (
+		#{lastName},
+		#{name},
+		#{naverId},
+		#{memo},
+		#{nickname}
+		)
+		;
+	 <selectKey resultType="String" keyProperty="seq" order="AFTER">
+			SELECT last_insert_id()
+		</selectKey>
+	 </insert>
+	
 </mapper>

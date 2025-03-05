@@ -24,7 +24,29 @@ public class AddressController {
 		
 		return "address/addressXdmList"; 
 		}
+	@RequestMapping(value = "/address/addressXdmItem")
+	public String addressXdmItem(Model model,AddressDto addressDto) {
+		
+		model.addAttribute("item", addressService.selectItem(addressDto));
+		return "address/addressXdmItem";
+	}
 	
-	
+	@RequestMapping(value = "/address/addressXdmForm")
+	public String addressXdmForm() {
+		
+		return "address/addressXdmForm";
+	}
+	@RequestMapping(value = "/address/addressXdmInst")
+	public String addressXdmInst(AddressDto addressDto) {
+		
+		System.out.println("addressDto.getSeq():" + addressDto.getSeq());
+		System.out.println("addressDto.getType():" + addressDto.getType());
+		
+		addressService.insert(addressDto);
+		
+		System.out.println("addressDto.getSeq():" + addressDto.getSeq());
+		
+		return "redirect:/address/addressXdmList";
+	}
 
 }

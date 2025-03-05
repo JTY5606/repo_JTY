@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+
+	<form action="/member/memberXdmInst" method="post">
+		lastname: <input tpye="text" name="lastName" maxlength="10" placeholder="성 입력">
+		name: <input type="text" name="name" maxlength="10" placeholder="이름 입력">
+		naverid: <input type="text" name="naverId" maxlength="15" placeholder="네이버 아이디 입력">
+		memo: <input type="text" name="memo" maxlength="50" placeholder="메모">
+		nickname: <input type="text" name="nickname" maxlength="20" placeholder="닉네임">
+		<button type="submit">저장</button>
+	</form>
+	<script type="text/javascript">
+	document.getElementById("btnSave").onclick = function(){
+		document.getElementById("form").submit();
+	}
+	</script>
+
+
+</body>
+</html>

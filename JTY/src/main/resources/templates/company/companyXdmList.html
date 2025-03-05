@@ -16,9 +16,13 @@
 	<tr th:each="list : ${list}">
 		<td th:text="${list.seq}"></td>
 		<td th:text="${list.main}"></td>
-		<td th:text="${list.company}"></td>
+		<td><a th:text="${list.company}" th:href="@{/company/companyXdmItem(seq=${list.seq})}"></td>
 		<td th:text="${list.department}"></td>
 		<td th:text="${list.position}"></td>
 		<td th:text="${list.member_seq}"></td>
 	</tr>
 </table>
+<br>
+<a href="/company/companyXdmForm">등록</a>
+</body>
+</html>

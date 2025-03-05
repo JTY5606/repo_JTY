@@ -16,9 +16,14 @@
 	<tr th:each="list : ${list}">
 		<td th:text="${list.seq}"></td>
 		<td th:text="${list.main}"></td>
-		<td th:text="${list.type}"></td>
+		<td><a th:text="${list.type}" th:href=@{/address/addressXdmItem(seq=${list.seq})}></td>
 		<td th:text="${list.postalcode}"></td>
 		<td th:text="${list.address}"></td>
 		<td th:text="${list.member_seq}"></td>
 	</tr>
 </table>
+<br>
+<a href="/address/addressXdmForm">등록</a>
+
+</body>
+</html>
