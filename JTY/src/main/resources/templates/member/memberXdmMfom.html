@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+
+<form action="/member/memberXdmUpdt" method="post" id="form">
+		<input type="hidden" name="seq" th:value="${item?.seq}"/>
+		seq: <input type="text" name="seq" maxlength="10" disabled th:value="${item?.seq}"/>
+		lastname: <input tpye="text" name="lastName" maxlength="10" placeholder="성 입력" th:value="${item?.lastName}"/>
+		name: <input type="text" name="name" maxlength="10" placeholder="이름 입력" th:value="${item?.name}"/>
+		naverid: <input type="text" name="naverId" maxlength="15" placeholder="네이버 아이디 입력" th:value="${item?.naverId}"/>
+		memo: <input type="text" name="memo" maxlength="50" placeholder="메모" th:value="${item?.memo}"/>
+		nickname: <input type="text" name="nickname" maxlength="20" placeholder="닉네임" th:value="${item?.nickname}"/>
+		<button type="button" id="btnSave">저장</button>
+</form>
+
+<script type="text/javascript">
+	document.getElementById("btnSave").onclick = function(){
+		document.getElementById("form").submit();
+	}
+</script>
+
+
+</body>
+</html>

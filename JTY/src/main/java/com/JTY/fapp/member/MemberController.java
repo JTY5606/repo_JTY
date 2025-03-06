@@ -78,4 +78,17 @@ public class MemberController {
 		System.out.println("memberDto.getSeq(): " + memberDto.getSeq());
 		return "redirect:/member/memberXdmList";
 	}
+	@RequestMapping(value = "/member/memberXdmMfom")
+	public String memberXdmMfom(Model model,MemberDto memberDto) {
+		
+		model.addAttribute("item", memberService.selectOne(memberDto));
+		return "member/memberXdmMfom";
+	}
+	
+	@RequestMapping(value = "/member/memberXdmUpdt")
+	public String memberXdmUpdt(MemberDto memberDto) {
+		
+		memberService.update(memberDto);
+		return "redirect:/member/memberXdmList";
+	}
 }

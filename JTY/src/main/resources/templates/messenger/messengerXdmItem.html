@@ -9,23 +9,20 @@
 		<td>seq</td>
 		<td>main</td>
 		<td>type</td>
-		<td>postalcode</td>
-		<td>address</td>
+		<td>messengeraddress</td>
 		<td>member_seq</td>
 	</tr>
 		<td th:text="${item.seq}"></td>
 		<td th:text="${item.main}"></td>
 		<td th:text="${item.type}"></td>
-		<td th:text="${item.postalcode}"></td>
-		<td th:text="${item.address}"></td>
+		<td th:text="${item.messengeraddress}"></td>
 		<td th:text="${item.member_seq}"></td>
 	</tr>
 </table>
 <br>
 <br>
-<a href="/address/addressXdmList">목록</a>
+<a href="/messenger/messengerXdmList">목록</a>
 <a href="">삭제</a>
-<a th:href="@{/address/addressXdmMfom(seq=${item.seq})}">수정</a>
-
+<a th:href="@{/messenger/messengerXdmMfom(seq=${item.seq})}">수정</a>
 </body>
 </html>

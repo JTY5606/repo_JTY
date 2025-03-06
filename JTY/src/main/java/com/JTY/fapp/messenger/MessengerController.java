@@ -24,5 +24,34 @@ public class MessengerController {
 		
 		return "messenger/messengerXdmList"; 
 		}
-
+	@RequestMapping(value = "/messenger/messengerXdmItem")
+	public String messengerXdmItem(Model model, MessengerDto messengerDto) {
+		
+		model.addAttribute("item", messengerService.selectItem(messengerDto));
+		return "messenger/messengerXdmItem"; 
+		}
+	@RequestMapping(value = "/messenger/messengerXdmForm")
+	public String messengerXdmForm() {
+		
+		return "messenger/messengerXdmForm"; 
+		}
+	@RequestMapping(value = "/messenger/messengerXdmInst")
+	public String messengerXdmInst(MessengerDto messengerDto) {
+		
+		messengerService.insert(messengerDto);
+		return "redirect:/messenger/messengerXdmList"; 
+		}
+	@RequestMapping(value = "/messenger/messengerXdmMfom")
+	public String messengerXdmMfom(Model model, MessengerDto messengerDto) {
+		
+		System.out.println("messengerDto.getSeq():" + messengerDto.getSeq());
+		model.addAttribute("item" , messengerService.selectItem(messengerDto));
+		return "messenger/messengerXdmMfom"; 
+		}
+	@RequestMapping(value = "/messenger/messengerXdmUpdt")
+	public String messengerXdmUpdt(MessengerDto messengerDto) {
+		
+		messengerService.update(messengerDto);
+		return "redirect:/messenger/messengerXdmList"; 
+		}
 }

@@ -47,5 +47,13 @@
 		</selectKey>
 		
 	</insert>
+<update id="update">
+	update email set
+		main = #{main},
+		email = #{email},
+		member_seq = #{member_seq}
+	where 
+		seq = #{seq}
+</update>
 	  
 </mapper>

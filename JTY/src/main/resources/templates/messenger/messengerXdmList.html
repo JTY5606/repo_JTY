@@ -16,7 +16,10 @@
 		<td th:text="${list.seq}"></td>
 		<td th:text="${list.main}"></td>
 		<td th:text="${list.type}"></td>
-		<td th:text="${list.messengeraddress}"></td>
+		<td><a th:text="${list.messengeraddress}" th:href="@{/messenger/messengerXdmItem(seq=${list.seq})}"></td>
 		<td th:text="${list.member_seq}"></td>
 	</tr>
 </table>
+<a href="/messenger/messengerXdmForm">등록</a>
+</body>
+</html>

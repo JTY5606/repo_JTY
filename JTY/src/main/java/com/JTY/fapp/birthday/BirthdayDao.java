@@ -10,5 +10,7 @@ public interface BirthdayDao {
 	public List<BirthdayDto> selectList();
 	public BirthdayDto selectDate(BirthdayDto birthdayDto);
 	public int insert(BirthdayDto birthdayDto);
+	public int update(BirthdayDto birthdayDto);
+	
 
 }

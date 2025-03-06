@@ -10,4 +10,5 @@ public interface CompanyDao {
 	public List<CompanyDto> selectList();
 	public CompanyDto selectItem(CompanyDto companyDto);
 	public int insert(CompanyDto companyDto);
+	public int update(CompanyDto companyDto);
 }

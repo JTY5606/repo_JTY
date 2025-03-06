@@ -49,5 +49,13 @@
 			SELECT last_insert_id()
 		</selectKey>
 	</insert>
-	  
+	<update id="update">
+		update birthday set
+			main = #{main},
+			type = #{type},
+			date = #{date},
+			member_seq = #{member_seq}
+		where
+			seq = #{seq}
+	</update>
 </mapper>

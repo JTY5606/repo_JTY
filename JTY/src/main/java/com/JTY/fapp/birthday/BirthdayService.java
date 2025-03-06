@@ -26,5 +26,7 @@ public class BirthdayService {
 	public int insert(BirthdayDto birthdayDto) {
 		return birthdayDao.insert(birthdayDto);
 	}
-
+	public int update(BirthdayDto birthdayDto) {
+		return birthdayDao.update(birthdayDto);
+	}
 }

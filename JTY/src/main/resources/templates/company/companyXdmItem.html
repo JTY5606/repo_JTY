@@ -21,5 +21,10 @@
 		<td th:text="${item.member_seq}"></td>
 	</tr>
 </table>
+<br>
+<br>
+<a href="/company/companyXdmList">목록</a>
+<a href="">삭제</a>
+<a th:href="@{/company/companyXdmMfom(seq=${item.seq})}">수정</a>
 </body>
 </html>

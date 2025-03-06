@@ -22,5 +22,10 @@ public class HomepageService {
 	public HomepageDto selectItem(HomepageDto homepageDto) {
 		return homepageDao.selectItem(homepageDto);
 	}
-
+	public int insert(HomepageDto homepageDto) {
+		return homepageDao.insert(homepageDto);
+	}
+	public int update(HomepageDto homepageDto) {
+		return homepageDao.update(homepageDto);
+	}
 }

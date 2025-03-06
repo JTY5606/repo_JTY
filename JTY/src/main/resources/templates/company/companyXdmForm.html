@@ -5,11 +5,12 @@
 <body>
 
 <form action="/company/companyXdmInst" method="post" id="form">
-	main: <input type="int" name="main" id="main">
-	company: <input type="text" name="company" id="company" length="20" placeholder="회사 입력">
-	department: <input type="text" name="department" id="department" length="20" placeholder="">
-	position: <input type="text" name="position" id="poistion" length="20">
-	member_seq: <input type="text" name="member_seq" id="member_seq" >
+	
+	main: <input type="int" name="main" id="main" th:value="${item?.main}"/>
+	company: <input type="text" name="company" id="company" length="20" placeholder="회사 입력" />
+	department: <input type="text" name="department" id="department" length="20" placeholder="" />
+	position: <input type="text" name="position" id="poistion" length="20" />
+	member_seq: <input type="text" name="member_seq" id="member_seq" />
 	<button type="button" id="btnSave">저장</button>
 </form>
 <script type="text/javascript">

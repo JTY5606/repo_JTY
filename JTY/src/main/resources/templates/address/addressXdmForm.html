@@ -5,8 +5,13 @@
 <body>
 
 <form action="/address/addressXdmInst" method="post" id="form">
-	seq: <input type="text" name="seq" id="seq" maxlength="10"/ disabled>
+	seq: <input type="text" name="seq" id="seq" maxlength="10" disabled/>
+	main: <input type="int" name="main" id="main"placeholder="" />
 	type: <input type="text" name="type" id="type"placeholder="이름 입력"/>
+	postalcode: <input type="text" name="postalcode" id="postalcode"placeholder="우편번호 입력"  />
+	address: <input type="text" name="address" id="address"placeholder="주소입력" th:value="${item?.address}" />
+	member_seq: <input type="text" name="member_seq" id="member_seq"placeholder=""  />
+	
 	<button type="button" id="btnSave">저장</button>
 </form>
 <script type="text/javascript">

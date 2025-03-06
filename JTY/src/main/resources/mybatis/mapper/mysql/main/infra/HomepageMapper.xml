@@ -30,5 +30,29 @@
 		order by seq desc
 		
 	</select>
+	<insert id="insert">
+	INSERT INTO homepage(
+		main,
+		homepage,
+		member_seq
+		)
+	VALUES(
+		#{main},
+		#{homepage},
+		#{member_seq}
+		)
+		
+		<selectKey resultType="String" keyProperty="seq" order="AFTER">
+			SELECT last_insert_id()
+		</selectKey>
+	</insert>
+	<update id="update">
+		update homepage set
+			main = #{main},
+			homepage = #{homepage},
+			member_seq = #{member_seq}
+		where
+			seq = #{seq}
+	</update>
 	  
 </mapper>

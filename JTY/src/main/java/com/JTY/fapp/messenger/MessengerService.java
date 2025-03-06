@@ -19,5 +19,13 @@ public class MessengerService {
 		
 		return messengerDtos; 
 	}
-
+	public MessengerDto selectItem(MessengerDto messengerDto) {
+		return messengerDao.selectItem(messengerDto);
+	}
+	public int insert(MessengerDto messengerDto) {
+		return messengerDao.insert(messengerDto);
+	}
+	public int update(MessengerDto messengerDto) {
+		return messengerDao.update(messengerDto);
+	}
 }

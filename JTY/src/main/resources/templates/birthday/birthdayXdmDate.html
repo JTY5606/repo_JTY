@@ -19,3 +19,11 @@
 		<td th:text="${date.member_seq}"></td>
 	</tr>
 </table>
+<br>
+<br>
+<a href="/birthday/birthdayXdmList">목록</a>
+<a href="">삭제</a>
+<a th:href="@{/birthday/birthdayXdmMfom(seq=${date.seq})}">수정</a>
+
+</body>
+</html>

@@ -28,5 +28,8 @@ public class EmailService {
 		
 		return emailDao.insert(emailDto);
 	}
-	
+	public int update(EmailDto emailDto) {
+		
+		return emailDao.update(emailDto);
+	}
 }

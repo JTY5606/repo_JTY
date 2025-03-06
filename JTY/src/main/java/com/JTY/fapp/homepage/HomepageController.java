@@ -32,5 +32,28 @@ public class HomepageController {
 		model.addAttribute("item",homepageService.selectItem(homepageDto));
 		return "homepage/homepageXdmItem";
 	}
-
+	@RequestMapping(value = "/homepage/homepageXdmForm")
+	public String homepageXdmFrom() {
+		
+		return "homepage/homepageXdmForm";
+	}
+	@RequestMapping(value = "/homepage/homepageXdmInst")
+	public String homepageXdmInst(HomepageDto homepageDto) {
+		
+		homepageService.insert(homepageDto);
+		System.out.println("homepageDto.getSeq():" + homepageDto.getSeq());
+		return "redirect:/homepage/homepageXdmList";
+	}
+	@RequestMapping(value = "/homepage/homepageXdmMfom")
+	public String homepageXdmMfom(Model model, HomepageDto homepageDto) {
+		
+		model.addAttribute("item", homepageService.selectItem(homepageDto));
+		return "homepage/homepageXdmMfom";
+	}
+	@RequestMapping(value = "/homepage/homepageXdmUpdt")
+	public String homepageXdmUpdt(HomepageDto homepageDto) {
+		
+		homepageService.update(homepageDto);
+		return "redirect:/homepage/homepageXdmList";
+	}
 }

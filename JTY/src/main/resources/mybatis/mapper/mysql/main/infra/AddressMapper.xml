@@ -44,15 +44,25 @@
 			member_seq
 			)
 		 values (
-			1,
+			#{main},
 			#{type},
-			"asd",
-			"서울",
-			1
+			#{postalcode},
+			#{address},
+			#{member_seq}
 			)
 	
 	<selectKey resultType="String" keyProperty="seq" order="AFTER">
 			SELECT last_insert_id()
 		</selectKey>
 	</insert>
+	<update id="update">
+		update address set
+			main = #{main},
+			type = #{type},
+			postalcode = #{postalcode},
+			address = #{address},
+			member_seq = #{member_seq}
+		where
+			seq = #{seq}
+	</update>
 </mapper>

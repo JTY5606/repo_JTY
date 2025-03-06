@@ -51,4 +51,17 @@ public class EmailController {
 		System.out.println("emailDto.getSeq():" + emailDto.getSeq());
 		return "redirect:/email/emailXdmList";
 	}
+	
+	@RequestMapping(value = "/email/emailXdmMfom")
+	public String emailXdmMfom(Model model,EmailDto emailDto) {
+		
+		model.addAttribute("email", emailService.selectEmail(emailDto));
+		return "email/emailXdmMfom";
+	}
+	@RequestMapping(value = "/email/emailXdmUpdt")
+	public String emailXdmUpdt(EmailDto emailDto) {
+		
+		emailService.update(emailDto);
+		return "redirect:/email/emailXdmList";
+	}
 }

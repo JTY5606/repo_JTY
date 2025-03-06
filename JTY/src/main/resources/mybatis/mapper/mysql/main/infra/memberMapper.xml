@@ -101,5 +101,16 @@
 			SELECT last_insert_id()
 		</selectKey>
 	 </insert>
-	
+	<update id="update">
+	update member
+	set
+		lastName=#{lastName},
+		name = #{name},
+		naverId = #{naverId},
+		memo = #{memo},
+		nickname = #{nickname}
+	where 
+		seq=#{seq}
+		
+	</update>
 </mapper>

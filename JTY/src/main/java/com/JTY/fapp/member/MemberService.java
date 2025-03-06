@@ -34,4 +34,7 @@ public class MemberService {
 	public int insert(MemberDto memberDto) {
 		return memberDao.insert(memberDto);
 	}
+	public int update(MemberDto memberDto) {
+		return memberDao.update(memberDto);
+	}
 }

@@ -53,5 +53,22 @@ public class BirthdayController {
 		return "redirect:/birthday/birthdayXdmList";
 		
 	}
-
+	@RequestMapping(value = "/birthday/birthdayXdmMfom")
+	public String birthdayXdmMfom(Model model,BirthdayDto birthdayDto) {
+		
+		model.addAttribute("date",birthdayService.selectDate(birthdayDto));
+		
+		return "birthday/birthdayXdmMfom";
+	}
+	@RequestMapping(value = "/birthday/birthdayXdmUpdt")
+	public String birthdayXdmUpdt(BirthdayDto birthdayDto) {
+		System.out.println("birthdayDto.getSeq():" + birthdayDto.getSeq());
+		System.out.println("birthdayDto.getMain():" + birthdayDto.getMain());
+		System.out.println("birthdayDto.getType():" + birthdayDto.getType());
+		System.out.println("birthdayDto.getDate():" + birthdayDto.getDate());
+		System.out.println("birthdayDto.getMember_seq():" + birthdayDto.getMember_seq());
+		birthdayService.update(birthdayDto);
+		return "redirect:/birthday/birthdayXdmList";
+		
+	}
 }

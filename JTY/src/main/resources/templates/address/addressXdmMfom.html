@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+
+<form action="/address/addressXdmUpdt" method="post" id="form">
+<input type="hidden" name="seq" th:value="${item?.seq}"/>
+<input type="hidden" name="member_seq" th:value="${item?.member_seq}"/>
+	seq: <input type="text" name="seq" id="seq" maxlength="10" disabled th:value="${item?.seq}"/>
+	main: <input type="int" name="main" id="main"placeholder="" th:value="${item?.main}" />
+	type: <input type="text" name="type" id="type"placeholder="이름 입력" th:value="${item?.type}" />
+	postalcode: <input type="text" name="postalcode" id="postalcode"placeholder="우편번호 입력" th:value="${item?.postalcode}" />
+	address: <input type="text" name="address" id="address"placeholder="주소입력" th:value="${item?.address}" />
+	member_seq: <input type="text" name="member_seq" id="member_seq"placeholder="" th:value="${item?.member_seq}" disabled />
+	<button type="button" id="btnSave">저장</button>
+</form>
+<script type="text/javascript">
+	document.getElementById("btnSave").onclick = function (){
+		document.getElementById("form").submit();
+	}
+	//document.getElementById("type").onclick = function (){
+	//	alert("type");
+	//}
+	
+
+
+</script>
+</body>
+</html>

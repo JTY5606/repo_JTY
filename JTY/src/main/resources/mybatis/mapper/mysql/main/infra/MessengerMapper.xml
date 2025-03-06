@@ -16,7 +16,47 @@
 			messenger
 		where 1=1
 		order by seq desc
-		;
+		
 	</select>
+	<select id="selectItem"  resultMap="resultMapObj">
+		SELECT
+			seq,
+			main,
+			type,
+			messengeraddress,
+			member_seq
+		FROM
+			messenger
+		where 1=1
+		AND seq = #{seq}
+	    	ORDER BY seq DESC
+	</select>
+
+<insert id="insert">
+	INSERT INTO messenger(
+		main,
+		type,
+		messengeraddress,
+		member_seq
+		)
+	values(
+		#{main},
+		#{type},
+		#{messengeraddress},
+		#{member_seq}
+		)
+<selectKey resultType="String" keyProperty="seq" order="AFTER">
+			SELECT last_insert_id()
+		</selectKey>
+	 </insert>
+<update id="update">
+	update messenger set
+		main = #{main},
+		type = #{type},
+		messengeraddress = #{messengeraddress},
+		member_seq = #{member_seq}
+	where
+		seq = #{seq}
+</update>
 	  
 </mapper>

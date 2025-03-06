@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+
+<form action="/homepage/homepageXdmInst" method="post" id="form">
+	main: <input type="int" name="main" id="main" />
+	homepage: <input type="text" name="homepage" id="homepage" placeholder="홈페이지 입력" length="30" />
+	member_seq: <input type="text" name="member_seq" id="member_seq" />
+<button tpye="button" id="btnSave" >저장</button>
+</form>
+<script type="text/javascript">
+	document.getElementById("btnSave").onclick = function(){
+		document.getElementById("form").submit();
+	}
+</script>
+</body>
+</html>

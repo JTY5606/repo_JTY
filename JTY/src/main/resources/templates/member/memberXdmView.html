@@ -13,5 +13,10 @@
 		<td th:text="${item.lastName}"></td>
 	</tr>
 </table>
+<br>
+<br>
+<a href="/member/memberXdmList">목록</a>
+<a href="">삭제</a>
+<a th:href="@{/member/memberXdmMfom(seq=${item.seq})}">수정</a>
 </body>
 </html>

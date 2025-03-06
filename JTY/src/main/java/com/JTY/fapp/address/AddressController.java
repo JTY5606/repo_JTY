@@ -48,5 +48,18 @@ public class AddressController {
 		
 		return "redirect:/address/addressXdmList";
 	}
-
+	@RequestMapping(value = "/address/addressXdmMfom")
+	public String addressXdmMfom(Model model, AddressDto addressDto) {
+		
+		System.out.println("addressDto.getSeq():" + addressDto.getSeq());
+		System.out.println("addressDto.getType():" + addressDto.getType());
+		model.addAttribute("item", addressService.selectItem(addressDto));
+		return "address/addressXdmMfom";
+	}
+	@RequestMapping(value = "/address/addressXdmUpdt")
+	public String addressXdmUpdt(AddressDto addressDto) {
+		
+		addressService.update(addressDto);
+		return "redirect:/address/addressXdmList";
+	}
 }

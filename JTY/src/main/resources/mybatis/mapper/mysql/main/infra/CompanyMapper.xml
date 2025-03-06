@@ -53,4 +53,14 @@
 			SELECT last_insert_id()
 		</selectKey>
 	 </insert>
+	 <update id="update">
+	 	update company set
+	 		main = #{main},
+	 		company = #{company},
+	 		department = #{department},
+	 		position = #{position},
+	 		member_seq = #{member_seq}
+	 	where 
+	 		seq = #{seq}
+	 </update>
 </mapper>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+<form action="/birthday/birthdayXdmUpdt" method="post" id="form">
+	<input type="hidden" name="seq" th:value="${date?.seq}"/>
+	<input type="hidden" name="member_seq" th:value="${date?.member_seq}"/>
+	main: <input type="int" name="main" id="main" th:value="${date?.main}"/>
+	type: <input type="text" name="type" id="type" length="15" th:value="${date?.type}"/>
+	date: <input type="text" name="date" id="date" length="30" th:value="${date?.date}"/>
+	member_seq: <input type="text" name="member_seq" id="member_seq" th:value="${date?.member_seq}" disabled/>
+	<button type="button" id="btsSave">등록</button>
+</form>
+<script type="text/javascript">
+	document.getElementById("btsSave").onclick = function(){
+		document.getElementById("form").submit();
+	}
+</script>
+
+
+</body>
+</html>
