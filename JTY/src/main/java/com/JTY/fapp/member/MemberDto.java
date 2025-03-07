@@ -12,8 +12,15 @@ public class MemberDto {
 	private String naverId;
 	private String memo;
 	private String nickname;
+	private Integer delNy;
 	
 	
+	public Integer getDelNy() {
+		return delNy;
+	}
+	public void setDelNy(Integer delNy) {
+		this.delNy = delNy;
+	}
 	public String getSeq() {
 		return seq;
 	}

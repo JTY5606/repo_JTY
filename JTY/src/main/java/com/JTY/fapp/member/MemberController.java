@@ -91,4 +91,15 @@ public class MemberController {
 		memberService.update(memberDto);
 		return "redirect:/member/memberXdmList";
 	}
+	@RequestMapping(value = "/member/memberXdmDele")
+	public String memberXdmDele(MemberDto memberDto) {
+		memberService.delete(memberDto);
+		return "redirect:/member/memberXdmList";
+	}
+	@RequestMapping(value = "/member/memberXdmUele")
+	public String memberXdmUele(MemberDto memberDto) {
+		memberService.uelete(memberDto);
+		return "redirect:/member/memberXdmList";
+	}
+	
 }

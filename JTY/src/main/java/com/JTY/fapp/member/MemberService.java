@@ -37,4 +37,10 @@ public class MemberService {
 	public int update(MemberDto memberDto) {
 		return memberDao.update(memberDto);
 	}
+	public int delete(MemberDto memberDto) {
+		return memberDao.delete(memberDto);
+	}
+	public int uelete(MemberDto memberDto) {
+		return memberDao.uelete(memberDto);
+	}
 }

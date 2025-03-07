@@ -16,6 +16,7 @@
 		FROM
 			member
 		where 1=1
+			AND delNy = 0
 		order by seq desc
 		
 	</select>
@@ -87,14 +88,16 @@
 		name,
 		naverId,
 		memo,
-		nickname
+		nickname,
+		delNy
 		)
 	values (
 		#{lastName},
 		#{name},
 		#{naverId},
 		#{memo},
-		#{nickname}
+		#{nickname},
+		0
 		)
 		;
 	 <selectKey resultType="String" keyProperty="seq" order="AFTER">
@@ -112,5 +115,16 @@
 	where 
 		seq=#{seq}
 		
+	</update>
+<delete id="delete">
+	delete from member
+	where seq = #{seq}
+</delete>
+<update id="uelete">
+	update member
+	set
+		delNy = 1
+	where 
+		seq=#{seq}
 	</update>
 </mapper>
