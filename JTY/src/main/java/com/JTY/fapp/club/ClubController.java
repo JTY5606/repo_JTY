@@ -16,11 +16,7 @@ public class ClubController {
 
 	@RequestMapping(value = "/club/clubXdmList")
 	public String clubXdmList(Model model) {
-		List<ClubDto> clubDtos = new ArrayList<>();
-		
-		clubDtos = clubService.selectList();
-		
-		model.addAttribute("list", clubDtos);
+		model.addAttribute("list", clubService.selectList());
 		
 		return "club/clubXdmList"; 
 		}
