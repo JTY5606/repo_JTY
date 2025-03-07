@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+
+<form action="/club1/club1XdmUpdt" method="post" id="form">
+<input type="hidden" name="seq" th:value="${item?.seq}"/>
+	seq: <input type="text" name="seq" id="seq" disabled th:value="${item?.seq}"/>
+	groupname: <input type="text" name="groupname" id="groupname" placeholder="그룹 이름 입력" length="20" th:value="${item?.groupname}" />
+<button type="button" id="btnSave">저장</button>
+</form>
+
+<script type="text/javascript">
+	document.getElementById("btnSave").onclick = function(){
+		document.getElementById("form").submit();
+	}
+</script>
+</body>
+</html>

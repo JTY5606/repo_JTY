@@ -12,8 +12,46 @@
 		FROM
 			club1
 		where 1=1
+			AND delNy= 0
 		order by seq desc
-		;
+		
 	</select>
-	  
+<select id="selectItem">
+	SELECT
+		seq,
+		groupname
+	FROM
+		club1
+	WHERE 1=1
+		AND seq=#{seq}
+		ORDER BY seq DESC
+</select>
+<insert id="insert">
+	INSERT INTO club1(
+		groupname,
+		delNy
+		)
+	VALUE(
+		#{groupname},
+		0
+	)
+	<selectKey resultType="String" keyProperty="seq" order="AFTER">
+			SELECT last_insert_id()
+		</selectKey>
+</insert>
+<update id="update">
+ UPDATE club1 set
+ 	groupname = #{groupname}
+ WHERE seq = #{seq}
+</update>
+<delete id="delete">
+DELETE FROM club1
+WHERE seq = #{seq} 
+</delete>
+<update id="uelete">
+UPDATE club1 set
+	delNy = 1
+WHERE 
+	seq = #{seq}
+</update>
 </mapper>

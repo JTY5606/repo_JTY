@@ -19,5 +19,19 @@ public class Club1Service {
 		
 		return club1Dtos; 
 	}
-
+	public Club1Dto selectItem(Club1Dto club1Dto) {
+		return club1Dao.selectItem(club1Dto);
+	}
+	public int insert(Club1Dto club1Dto) {
+		return club1Dao.insert(club1Dto);
+	}
+	public int update(Club1Dto club1Dto) {
+		return club1Dao.update(club1Dto);
+	}
+	public int delete(Club1Dto club1Dto) {
+		return club1Dao.delete(club1Dto);
+	}
+	public int uelete(Club1Dto club1Dto) {
+		return club1Dao.uelete(club1Dto);
+	}
 }

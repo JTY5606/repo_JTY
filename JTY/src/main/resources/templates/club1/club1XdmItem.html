@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+
+<table>
+	<tr>
+		<td>seq</td>
+		<td>groupname</td>
+	</tr>
+		<td th:text="${item.seq}"></td>
+		<td th:text="${item.groupname}"></td>
+	</tr>
+</table>
+<a href="/club1/club1XdmList">목록</a>
+<a th:href="@{/club1/club1XdmDele(seq=${item.seq})}">삭제</a>
+<a th:href="@{/club1/club1XdmMfom(seq=${item.seq})}">수정</a>
+<a th:href="@{/club1/club1XdmUele(seq=${item.seq})}" id="uelete">업제</a>
+
+<script type="text/javascript">
+document.getElementById("uelete").onclick = function(){
+	if(confirm("진짜요?")){
+		//삭제
+	} else{
+		//아무것도 하지 않음
+		return false;
+	}
+}
+
+</script>
+</body>
+</html>
